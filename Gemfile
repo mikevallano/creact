@@ -7,8 +7,9 @@ gem 'sass-rails', '>= 3.2'
 gem 'jquery-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'responders'
-gem 'faker'
+gem 'ffaker'
 gem 'populator'
+gem 'react-rails'
 
 group :development, :test do
   gem 'rspec-rails'
