@@ -1,8 +1,8 @@
-var Main = React.createClass({
+var Body = React.createClass({
   render() {
     return (
       <div>
-        <Header />
+        <h1>Kittehs</h1>
       </div>
     )
   }
