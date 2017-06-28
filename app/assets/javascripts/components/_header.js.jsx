@@ -2,8 +2,7 @@ var Header = React.createClass({
   render() {
     return (
       <div>
-        <NewSkill />
-        <AllSkills />
+        <h1>Tacos</h1>
       </div>
     )
   }
