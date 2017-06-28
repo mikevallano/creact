@@ -8,10 +8,20 @@ var AllSkills = React.createClass({
   },
 
   render() {
-    return (
-      <div>
-        <h1>Hello from All Skills!</h1>
-      </div>
+
+    var skills =  this.state.skills.map((skill) => {
+                  return  (
+                          <div key={skill.id}>
+                            <h3>{skill.name}</h3>
+                            <h5>{skill.details}</h5>
+                          </div>
+                          )
+                  })
+
+    return(
+        <div>
+            {skills}
+        </div>
     )
   }
 });
