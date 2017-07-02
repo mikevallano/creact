@@ -25,29 +25,34 @@ var Skill = React.createClass({
   },
 
   render() {
-    var name = this.state.editable ? <input type='text'
-                                            onChange={ (e) => this.setState({ name: e.target.value }) }
-                                            defaultValue={this.props.skill.name} />
-                                   : <h3>{this.props.skill.name}</h3>
+    var editableSkillName = <input className='form-control' type='text'
+                              onChange={ (e) => this.setState({ name: e.target.value }) }
+                              defaultValue={this.props.skill.name} />
 
-    var details = this.state.editable ? <textarea type='text'
-                                                  onChange={ (e) => this.setState({ details: e.target.value }) }
-                                                  defaultValue={this.props.skill.details}>
-                                        </textarea>
-                                      : <p>{this.props.skill.details}</p>
+
+
+    var editableSkillDetails =  <textarea className='form-control' type='text'
+                                  onChange={ (e) => this.setState({ details: e.target.value }) }
+                                  defaultValue={this.props.skill.details}>
+                                </textarea>
+
+    var name = this.state.editable ? editableSkillName : <h3>{this.props.skill.name}</h3>
+
+    var details = this.state.editable ? editableSkillDetails : <p>{this.props.skill.details}</p>
 
     return (
     <div>
       {name}
 
       <p><strong>Level:</strong> {this.props.skill.level}</p>
+
       {details}
 
-      <button onClick={this.props.handleDelete}>
+      <button className="btn btn-danger btn-sm"onClick={this.props.handleDelete}>
         Delete
       </button>
 
-      <button onClick={this.handleEdit}>{this.state.editable ? 'Submit' : 'Edit' }</button>
+      <button className="btn btn-warning btn-sm" onClick={this.handleEdit}>{this.state.editable ? 'Submit' : 'Edit' }</button>
     </div>
   )
   }
