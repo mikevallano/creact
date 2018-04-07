@@ -10,6 +10,10 @@ var NewSkill= React.createClass({
         data: { skill: { name: name, details: details } },
         success: (skill) => {
           this.props.handleSubmit(skill);
+          var inputs = document.getElementsByClassName('skill-input');
+          Array.from(inputs).forEach(function(input) {
+            input.value = '';
+          });
         }
       });
 
@@ -26,8 +30,8 @@ var NewSkill= React.createClass({
     console.log(name, details);
     return (
       <div>
-        <input onChange={ (e) => this.setState({ name: e.target.value }) } placeholder='Enter name of skill' />
-        <input onChange={ (e) => this.setState({ details: e.target.value }) } placeholder='Details' />
+        <input className='skill-input' onChange={ (e) => this.setState({ name: e.target.value }) } placeholder='Enter name of skill' />
+        <input className='skill-input' onChange={ (e) => this.setState({ details: e.target.value }) } placeholder='Details' />
         <button onClick={this.handleClick}>Submit</button>
       </div>
     )
