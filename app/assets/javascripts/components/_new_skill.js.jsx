@@ -30,9 +30,9 @@ var NewSkill= React.createClass({
     console.log(name, details);
     return (
       <div>
-        <input className='skill-input' onChange={ (e) => this.setState({ name: e.target.value }) } placeholder='Enter name of skill' />
-        <input className='skill-input' onChange={ (e) => this.setState({ details: e.target.value }) } placeholder='Details' />
-        <button onClick={this.handleClick}>Submit</button>
+        <input className='skill-input form-control' onChange={ (e) => this.setState({ name: e.target.value }) } placeholder='Enter name of skill' />
+        <input className='skill-input form-control' onChange={ (e) => this.setState({ details: e.target.value }) } placeholder='Details' />
+        <button className='btn btn-success' onClick={this.handleClick}>Submit</button>
       </div>
     )
   }
